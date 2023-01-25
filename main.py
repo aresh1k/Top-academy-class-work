@@ -2499,29 +2499,31 @@
 # print(typed_fn3("Hello", "World", z=5))
 
 
-def args_decorator(tx=None, decorator_text=""):
-    def my_decorator(func):
-        def wrap(*args):
-            print(decorator_text, end="")
-            func(*args)
+# def args_decorator(tx=None, decorator_text=""):
+#     def my_decorator(func):
+#         def wrap(*args):
+#             print(decorator_text, end="")
+#             func(*args)
+#
+#         return wrap
+#
+#     return my_decorator
+#
+#
+# @args_decorator(decorator_text="Hello, ")
+# def hello_world(text):
+#     print(text)
+#
+#
+# @args_decorator
+# def hello_world2(text):
+#     print(text)
+#
+#
+# hello_world("world")
+# hello_world2("Hi")
 
-        return wrap
 
-    return my_decorator
-
-
-@args_decorator(decorator_text="Hello, ")
-def hello_world(text):
-    print(text)
-
-
-@args_decorator
-def hello_world2(text):
-    print(text)
-
-
-hello_world("world")
-hello_world2("Hi")
-
+print("Вносим изменения в склонированный проект")
 
 
