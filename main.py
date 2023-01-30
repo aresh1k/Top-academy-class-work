@@ -2524,6 +2524,249 @@
 # hello_world2("Hi")
 
 
-print("Вносим изменения в склонированный проект")
+# print("Вносим изменения в склонированный проект")
+
+# print(int("18"))
+# print(int("100", 2))
+# print(int("100", 8))
+# print(int("100", 10))
+# print(int("100", 16))
+
+
+# print(bin(18))      # 0b10010
+# print(oct(18))      # 0o22
+# print(hex(18))      # 0x12
+# print(0b10010)
+# print(0o22)
+# print(0x12)
+
+
+# q = 'Pyt'
+# w = "hon"
+# e = q + w
+# print(e)
+# print(e * 2)
+# print("y" in e)
+# print(e[1])
+# print(e[0:-1])
+
+#
+# s = "Python"
+# s = s[:3] + 't' + s[4:]
+# print(s)
+
+
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+#
+#
+# def change_char_to_str(s, old, new):
+#     s2 = ""
+#     for i in range(len(s)):
+#         if s[i] == old:
+#             s2 += new
+#         else:
+#             s2 += s[i]
+#     return s2
+#
+#
+# str2 = change_char_to_str(str1, "N", "P")
+#
+# print(str1)
+# print(str2)
+
+
+# print(u"Привет")
+# print("Привет")
+#
+# print("C:\\folder\\file.txt")
+# print(r"C:\folder\file.txt")
+# print(r"C:\folder\\"[:-1])
+
+# from math import pi
+#
+# name = "Дмитрий"
+# age = 25
+# print(f"Меня зовут {name}. Мне {age} лет.")
+# print(f"Значение числа pi: {round(pi, 2)}")
+# print(f"Значение числа pi: {pi:.2f}")
+#
+# x = 5
+# y = 10
+# print(f"{x} x {y} / 2 = {x * y / 2}")
+# print(f"{x = }, {y=}")
+#
+#
+# a = 74
+# print(f"{a}")
+# print(f"{{{a}}}")
+
+
+# dir_name = "my_doc"
+# file_name = "data"
+#
+# print(fr"home\{dir_name}\{file_name}")
+
+
+# s = """<div>
+#     <p>Текст</p>
+# </div>
+# """
+#
+# print(s)
+#
+# s1 = '''<div>
+#     <p>Текст</p>
+# </div>
+# '''
+#
+# print(s1)
+#
+#
+# def square(n):
+#     """Принимает число n, возвращает квадрат числа n"""
+#     return n ** 2
+#
+#
+# print(square(5))
+#
+#
+# print(square.__doc__)
+# print(sum.__doc__)
+
+
+# import math
+#
+#
+# def cylinder(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#
+#     Вычисляет площадь цилиндра на основании заданной высоты и радиуса основания
+#
+#     :param r: положительное число, радиус основания цилиндра
+#     :param h: положительное число, высота цилиндра
+#     :return: положительное число, площадь цилиндра
+#     """
+#     return 2 * math.pi * r * (r + h)
+#
+#
+# print(cylinder(2, 4))
+# print(cylinder.__doc__)
+
+
+# print(ord("a"))
+
+
+# while True:
+#     n = input("-> ")
+#     if n != "-1":
+#         print(ord(n))
+#     else:
+#         break
+
+
+# my_str = "Test string for me"
+#
+# arr = [ord(x) for x in my_str]
+# print("ASCII коды:", arr)
+# arr = [sum(arr) // len(arr)] + arr
+# print("Среднее арифметичское:", arr)
+# arr += [ord(x) for x in input("-> ")[:3] if ord(x) not in arr]
+# print(arr)
+# # if arr[-1] in arr[:-1]:
+# print(arr.count(arr[-1] - 1))
+# arr.sort(reverse=True)
+# print(arr)
+
+# print(chr(33))
+# print(chr(8364))
+#
+# a = 122
+# b = 97
+# if a > b:
+#     a, b = b, a
+# for i in range(a, b + 1):
+#     print(chr(i), end=" ")
+
+
+# print("apple" == 'Apple')
+# print("apple" > "Apple")
+# print(ord("a"))
+# print(ord("A"))
+#
+# print(9 > 5)
+# print(ord("9"))
+# print(ord("5"))
+
+
+# from random import randint
+#
+# def random_password():
+#     rand_len = randint(7, 10)
+#     res = ""
+#
+#     for i in range(rand_len):
+#         rand_char = chr(randint(33, 126))
+#         res += rand_char
+#
+#     return res
+#
+#
+# print("Ваш случайный пароль:", random_password())
+
+
+# print(dir(list))
+
+# s = 'hello, WORLD! I am learning Python.'
+# print(s.capitalize())   # Hello, world! i am learning python.
+# print(s.lower())        # hello, world! i am learning python.
+# print(s.upper())        # HELLO, WORLD! I AM LEARNING PYTHON.
+# print(s.swapcase())     # HELLO, world! i AM LEARNING pYTHON.
+
+
+# print(s.count("h"))
+
+
+# print(s.find("e", 2))      # Ищет индекс первого встреченного указанного элемента
+#
+# print(s.find("e1"))         # Ищет в строке заданную подстроку (возвращает "-1" - если подстрока не найдена
+# print(s.rfind("e1"))
+#
+#
+# print(s.index("e1"))        # Ищет в строке заданную подстроку (ValueError - если подстрока не найдена)
+# print(s.rindex("e1"))
+
+
+# str1 = "Один два"
+# space_ind = str1.find(" ")
+# print(str1[space_ind + 1:] + str1[:space_ind])
+
+
+# s = "ab12c59p7dq"
+# digits = [int(x) for x in s if x in "0123456789"]
+# print(digits)
+
+
+# s = "ab12c59p7dq"
+# digits = []
+# for ch in s:
+#     if "0123456789".find(ch) != -1:
+#         digits.append(int(ch))
+#
+# print(digits)
+
+
+# print("abc123".isalnum())   # состоит ли строка из букв и цифр
+# print("abc123!".isalnum())
+#
+#
+# print("ABCcbf".isalpha())   # состоит ли строка из букв (любой регистр)
+# print("ABCcbf@".isalpha())
+#
+#
+# print("123".isdigit())      # состоит ли строка из цифр
+# print("123b".isdigit())
+
+
 
 
