@@ -1,0 +1,40 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    {% if title %}-->
+<!--    <title>Про Flask - {{ title }}</title>-->
+<!--    {% else %}-->
+<!--    <title>Про Flask</title>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <title>{{ title }}</title>&ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--    <ul class="menu">-->
+<!--        {% for m in menu %}-->
+<!--        <li><a href="{{ m.url }}">{{ m.name }}</a></li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--    {% if title %}-->
+<!--        <h1>Про Flask - {{ title }}</h1>-->
+<!--    {% else %}-->
+<!--        <h1>Про Flash</h1>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <h1>{{ title }}</h1>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h2>Содержимое главной страницы</h2>
+<ul>
+    {% for p in posts %}
+    <li>
+        <p class="title"><a href="{{ url_for('show_post', alias=p.url) }}">{{ p.title }}</a></p>
+        <div class="annonce">{{ p.text[:200] | striptags }}</div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

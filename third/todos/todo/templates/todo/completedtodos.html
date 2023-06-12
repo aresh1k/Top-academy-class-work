@@ -1,0 +1,32 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+{{ todo.title }}
+
+{{ error }}
+
+<h1>Завершено:</h1>
+
+<ul>
+  {% for todo in todos %}
+  <li class="completed"></li>
+
+        {% if todo.important %}
+            <b>{{ todo.title }}</b>
+        {% else %}
+            {{ todo.title }}
+        {% endif %}
+
+        {% if todo.memo %}
+            - {{ todo.memo }}
+        {% endif %}
+
+        <div class="right">{{ todo.date_completed|date: 'j.m.Y H:i' }}</div>
+
+    </li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
