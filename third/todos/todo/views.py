@@ -22,7 +22,7 @@ def signupuser(request):
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('')
+                return redirect('currenttodos')
             except IntegrityError:
                 return render(request, 'todo/signupuser.html', {'form': UserCreationForm(), 'error': 'Такое имя пользователя уже существует. Задайте другое'})
         else:
@@ -71,10 +71,10 @@ def createtodo(request):
 
 @login_required
 def viewtodo(request, todo_pk):
-    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    todo = get_object_or_404(Todo, pk=todo_pk)
     if request.method == 'GET':
         form = TodoForm(instance=todo)
-        return render(request, 'todo/viewtodo.html', {'todo': todo})
+        return render(request, 'todo/viewtodo.html', {'todo': todo, 'form': form})
     else:
         try:
             form = TodoForm(request.POST, instance=todo)
@@ -102,6 +102,6 @@ def deletetodo(request, todo_pk):
 
 
 @login_required
-def completedtodo(request):
+def completedtodos(request):
     todos = Todo.objects.filter(user=request.user, date_completed__isnull=False).order_by('-date_completed')
     return render(request, 'todo/completedtodos.html', {'todos': todos})
