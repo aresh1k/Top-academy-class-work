@@ -46,7 +46,7 @@ img {
 }
 
 .header__nav > ul {
-
+  display: inline-flex;
   align-items: center;
   list-style: none;
   gap: 6.5rem;
