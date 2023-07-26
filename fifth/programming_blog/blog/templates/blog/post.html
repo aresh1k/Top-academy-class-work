@@ -7,6 +7,8 @@
     {% if post.photo %}
     <img class="image" src="{{ post.photo.url }}">
     {% endif %}
+
+    {{ post.content|safe }}
 </div>
 
 {{ post.title }}

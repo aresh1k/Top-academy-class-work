@@ -3,13 +3,14 @@ from .models import *
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from captcha.fields import CaptchaField
 
 
 class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class':'form-input'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
-    password1 = forms.CharField(labes='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    password2 = forms.CharField(labes='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
     class Meta:
         model = User
@@ -35,3 +36,10 @@ class AddPostForm(forms.ModelForm):
         if len(title) > 100:
             raise ValidationError('Длина превышает 100 символов')
         return title
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(label='Имя', max_length=255)
+    email = forms.EmailField(label='Email')
+    content = forms.CharField(label='Сообщение', widget=forms.Textarea(attrs={'cols': 60, 'rows': 10}))
+    captcha = CaptchaField()
